@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   def dashboard
-    @company = current_user
-    @employees = @company.employees
+    @user = current_user
+    @employees = @user.employees
   end
 end

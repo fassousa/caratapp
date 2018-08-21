@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :companies
+  devise_for :users
   root to: 'pages#home'
   resources :employees
   get 'dashboard', to: 'employees#dashboard', as: :dashboard
