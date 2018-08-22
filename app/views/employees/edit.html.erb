@@ -1,6 +1,6 @@
 Edit employee
 
-<%= simple_form_for @employee do |f| %>
+<%= simple_form_for(@employee, method: :patch) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.button :submit %>
