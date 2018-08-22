@@ -1,0 +1,39 @@
+.card {
+  height: 300px;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .icon-circle {
+  border-radius: 50%;
+  background-color: #FBF0AC;
+  height: 100px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.icon-circle i {
+  color: #364248;
+  font-size: 45px;
+  padding-top: 25px;
+}
+
+#how-it-works {
+  height: 100vh;
+}
+
+#how-it-works h3 {
+  margin-top: 100px;
+  font-weight: 700;
+}
+
+.card .card-text h4 {
+  font-weight: 700;
+}
+
+.wrapper-cards {
+  margin-top: 100px;
+}
