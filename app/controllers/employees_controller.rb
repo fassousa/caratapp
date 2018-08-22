@@ -16,23 +16,31 @@ class EmployeesController < ApplicationController
   end
 
   def edit
-    @employee = Employee.new
+    @employee = Employee.find(params[:id])
   end
 
   def update
     @employee = Employee.find(params[:id])
     @employee.update(employee_params)
-
-    redirect_to dashboard_path
+    if @employee.save
+      redirect_to dashboard_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @employee = Employee.find(params[:id])
+    @employee.destroy
 
+    redirect_to dashboard_path
   end
 
 
   private
 
-
+  def employee_params
+    params.require(:employee).permit(:name, :address)
+  end
 
 end

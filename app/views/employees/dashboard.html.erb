@@ -21,7 +21,8 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li><%= link_to "Edit", edit_employee_path(e) %></li>
-              <li><%= link_to "Delete", dashboard_path %></li>
+              <li><%= link_to "Delete", employee_path(e), method: :delete,
+              data: { confirm: "Are you sure?" } %></li>
             </ul>
           </div>
 
