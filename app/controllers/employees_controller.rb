@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+
   def dashboard #this is our index page
     @user = current_user
     @employees = @user.employees
@@ -13,6 +14,25 @@ class EmployeesController < ApplicationController
       }
     end
   end
+
+  def edit
+    @employee = Employee.new
+  end
+
+  def update
+    @employee = Employee.find(params[:id])
+    @employee.update(employee_params)
+
+    redirect_to dashboard_path
+  end
+
+  def destroy
+
+  end
+
+
+  private
+
 
 
 end
