@@ -12,7 +12,12 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+
+    <div class="sticky-footer">
+      <%= yield %>
+    </div>
+
+
     <%= render "shared/footer" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
