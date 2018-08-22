@@ -1,28 +1,42 @@
-.btn-carat-blue {
-  background-color: #FBF0AC;
-  color: #364248;
-  padding: 10px 15px;
-  font-weight: lighter;
-  text-decoration: none;
-}
-
-.btn-carat-blue:hover {
-  background-color: #364248;
-  color: #F4D213;
-  text-decoration: none;
-  font-weight: lighter;
-}
-
 .btn-carat-yellow {
   background-color: #364248;
+  letter-spacing: 2px;
   color: #F4D213;
-  padding: 10px 15px;
-  font-weight: lighter;
-}
-
-.btn-carat-yellow:hover {
-  background-color: #FBF0AC;
-  color: #364248;
+  padding: 17px 15px;
   font-weight: lighter;
   text-decoration: none;
+  position: absolute;
+  width: 100%;
+  top: -12px;
+  right: 9px;
+  &:hover {
+    transition: background-color 300ms ease;
+    transition-property: background-color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+     background-color: #F4D213;
+    color: #364248;
+    text-decoration: none;
+    font-weight: lighter;
+  }
+}
+
+.button-style {
+  position: relative; left: calc(50% - 89px);
+  width: 171px;
+  height: 62px;
+  border-right: 3px solid #364248;
+  border-bottom: 3px solid #364248;
+  &:hover {
+    transition: background-color 300ms ease;
+    transition-property: background-color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    background-color: #364248;
+    color: #F4D213;
+    text-decoration: none;
+    font-weight: lighter;
+  }
 }
