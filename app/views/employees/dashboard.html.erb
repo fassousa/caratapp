@@ -4,35 +4,37 @@
       <h3><%= @user.company_name %></h3>
       <p><%= @user.address %></p>
       <p><%= @user.email %></p>
-
     </div>
+
     <div>
-      <div>
+      <a class=“btn-carat-blue text-center”>Upload CSV</a>
+    </div>
+
+
+    <% if !@employees.empty? %>
+      <%= render 'add_employees' %>
+    <% else %>
+      <%= render 'edit_employees' %>
+    <% end %>
+
+    <div>
+      <p><strong>Or</strong></p>
+    </div>
+
+    <div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Add employees </button> <%= render "modal" %>
+    </div>
+
+    <div>
+      <div id="employee-list">
+        <p><strong>Your employees</strong></p>
         <% @employees.each do |e| %>
-        <div class="employee-card">
-          <div>
-            <div class="employee-name"><%= e.name %></div>
-            <div class="employee-address"><%= e.address %></div>
-          </div>
-
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><%= link_to "Edit", edit_employee_path(e) %></li>
-              <li><%= link_to "Delete", employee_path(e), method: :delete,
-              data: { confirm: "Are you sure?" } %></li>
-            </ul>
-          </div>
-
-
-        </div>
+          <%= render 'employee_card', e: e %>
         <% end %>
       </div>
     </div>
   </div>
-
 
   <div class="col-sm-8">
     <div
@@ -41,7 +43,6 @@
       height: 600px;"
       data-markers="<%= @markers.to_json %>"
     ></div>
-
   </div>
 </div>
 
