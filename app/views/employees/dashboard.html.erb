@@ -1,5 +1,38 @@
 <div class="row">
-  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div>
+      <h3><%= @user.company_name %></h3>
+      <p><%= @user.address %></p>
+      <p><%= @user.email %></p>
+
+    </div>
+    <div>
+      <div>
+        <% @employees.each do |e| %>
+        <div class="employee-card">
+          <div>
+            <div class="employee-name"><%= e.name %></div>
+            <div class="employee-address"><%= e.address %></div>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><%= link_to "Edit", edit_employee_path(e) %></li>
+              <li><%= link_to "Delete", dashboard_path %></li>
+            </ul>
+          </div>
+
+
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
   <div class="col-sm-8">
     <div
       id="map"
