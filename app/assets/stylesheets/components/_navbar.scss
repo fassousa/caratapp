@@ -1,13 +1,26 @@
 /* Main navbar */
-.navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #364248;
-  transition: all 0.3s ease;
+.navbar-wagon-home {
+  background-color: transparent;
+  transition: 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-wagon {
+  background-color: #364248;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-wagon-blue {
+  background: #364248;
+  transition: ease 0.3s;
 }
 
 /* Logo */
@@ -80,5 +93,24 @@
   font-size: 50px;
   color: #F4D213;
   font-family: $logo-font;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
+
+a a:hover a:focus a:active {
+  text-decoration: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
