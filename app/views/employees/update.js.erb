@@ -5,19 +5,21 @@ function refreshForm() {
   newEmployeeAddress.value = "";
 }
 
-function addEmployee(employeeHTML) {
+function updateEmployee(employeeHTML) {
   const employeeList = document.getElementById('employee-list');
+  const employee = document.getElementById('<%= @employee.id %>');
+  employee.parentNode.removeChild(employee);
   employeeList.insertAdjacentHTML('beforeend', employeeHTML);
 }
 
-var closeBtn = document.getElementById('close-button')
+var closeBtn = document.getElementById('close<%= @employee.id %>')
 
 <% if @employee.errors.any? %>
 
   console.log("error")
 <% else %>
   <% @e = @employee %>
-  addEmployee('<%= j render "employee_card", e: @e %>');
+  updateEmployee('<%= j render "employee_card", e: @e %>');
   closeBtn.click()
   refreshForm();
   // refreshForm();

@@ -10,27 +10,23 @@
       <a class=“btn-carat-blue text-center”>Upload CSV</a>
     </div>
 
-
-    <% if !@employees.empty? %>
-      <%= render 'add_employees' %>
-    <% else %>
-      <%= render 'edit_employees' %>
-    <% end %>
-
+<!--   need to have different views here for login or not login
+ -->
     <div>
       <p><strong>Or</strong></p>
     </div>
 
     <div>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Add employees </button> <%= render "modal" %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal"> Add employee </button> <%= render "add_modal" %>
     </div>
 
     <div>
       <div id="employee-list">
         <p><strong>Your employees</strong></p>
         <% @employees.each do |e| %>
-          <%= render 'employee_card', e: e %>
+          <% @e = e %>
+          <%= render 'employee_card', e: @e %>
         <% end %>
       </div>
     </div>
@@ -45,4 +41,5 @@
     ></div>
   </div>
 </div>
+
 
