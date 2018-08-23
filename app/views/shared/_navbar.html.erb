@@ -21,14 +21,7 @@
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
+            <%= link_to "Dashboard", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
@@ -54,9 +47,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Your Dashboard", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
