@@ -31,20 +31,22 @@ class EmployeesController < ApplicationController
         format.js  # <-- idem
       end
     end
-
-  end
-
-  def edit
-    @employee = Employee.find(params[:id])
   end
 
   def update
     @employee = Employee.find(params[:id])
     @employee.update(employee_params)
+
     if @employee.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to user_path(current_user) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render 'edit'
+      respond_to do |format|
+        format.html { render 'employees/dashboard' }
+        format.js  # <-- idem
+      end
     end
   end
 
