@@ -54,7 +54,17 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
     @employee.destroy
 
-    redirect_to dashboard_path
+    if @employee.destroy
+      respond_to do |format|
+        format.html { redirect_to user_path(current_user) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'employees/dashboard' }
+        format.js  # <-- idem
+      end
+    end
   end
 
 
