@@ -1,4 +1,4 @@
-<div class="employee-card" id="<%= @e.id %>">
+<div class="employee-card" id="emp<%= @e.id %>">
   <div>
     <div class="employee-name"><%= @e.name %></div>
     <div class="employee-address"><%= @e.address %></div>
@@ -9,6 +9,7 @@
 
     <%= link_to "DELETE", employee_path(e),
       method: :delete,
+      remote: :true,
       data: { confirm: "Are you sure?" },
       class: "btn-carat-delete" %>
   </div>
