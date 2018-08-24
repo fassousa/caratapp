@@ -4,8 +4,13 @@
     <div class="employee-address"><%= @e.address %></div>
   </div>
 
-  <div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target='<%= "#editModal#{@e.id}" %>'> Edit employee </button>
-    <%= render "edit_modal", e: @e %>
+  <div class="row">
+    <button type="button" class="btn-carat-add" data-toggle="modal" data-target='<%= "#editModal#{@e.id}" %>'> EDIT </button>
+
+    <%= link_to "DELETE", employee_path(e),
+      method: :delete,
+      data: { confirm: "Are you sure?" },
+      class: "btn-carat-delete" %>
   </div>
+    <%= render "edit_modal", e: @e %>
 </div>

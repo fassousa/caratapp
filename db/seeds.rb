@@ -1,6 +1,3 @@
-User.destroy_all
-Employee.destroy_all
-
 company = User.create!(
   email: 'company@company.com',
   password: '123456',
