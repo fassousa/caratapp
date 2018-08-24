@@ -1,4 +1,4 @@
-<div class="employee-card" id="<%= @e.id %>">
+<div class="employee-card" id="emp<%= @e.id %>">
   <div>
     <div class="employee-name"><strong><%= @e.name %></strong></div>
     <div class="employee-address"><%= @e.address %></div>
@@ -9,6 +9,7 @@
     &nbsp;
     <%= link_to "DELETE", employee_path(e),
       method: :delete,
+
       data: { confirm: "Are you sure?" } %>
       <%= render "edit_modal", e: @e %>
   </div>
