@@ -53,17 +53,9 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
-
-    if @employee.destroy
-      respond_to do |format|
-        format.html { redirect_to user_path(current_user) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { render 'employees/dashboard' }
-        format.js  # <-- idem
-      end
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
     end
   end
 
