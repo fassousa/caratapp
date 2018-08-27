@@ -15,7 +15,13 @@
         </p>
       </div>
       <div class="text-center">
-        <button type="button" class="btn-carat-regular">UPLOAD CSV</a>
+        <button type="button" class="btn-carat-regular">UPLOAD CSV</button>
+          <%= form_for @employee, url: { controller: 'employees', action: 'parse', method: :post } do |f| %>
+          <div class="form-group">
+            <%= f.file_field :csv_file, class: 'form-control' %>
+            <%= f.submit :submit, class: 'form-control' %>
+          </div>
+          <% end %>
         <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> ADD MANUALLY </button> <%= render "add_modal" %>
       </div>
       <hr>
