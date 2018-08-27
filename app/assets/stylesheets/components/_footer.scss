@@ -20,11 +20,6 @@
   opacity: 1;
 }
 
-.sticky-footer {
-  min-height: 78vh;
+.bottom-footer {
+  min-height: calc(80vh-70px) !important;
 }
-
-
-// .footer {
-//   flex-shrink: 0;
-// }
