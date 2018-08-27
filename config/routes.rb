@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     root 'employees#dashboard', as: :authenticated_root
   end
   root to: 'pages#home'
+  post 'employees/parse', to: 'employees#parse'
 end

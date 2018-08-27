@@ -4,8 +4,11 @@
 }
 
 .column-padding {
-  margin-left: 10px;
+  margin-left: 20px;
   padding-top: 70px;
+  p {
+  font-size: 15px;
+  margin-left: 10px;
   h3 {
     font-weight: bold;
     font-size: 24px;
@@ -13,4 +16,13 @@
   p {
     margin-left: 20px;
   }
+  color: #364248;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #364248;
+    padding-bottom: 10px;
+  }
 }
+
