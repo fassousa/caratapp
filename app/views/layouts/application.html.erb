@@ -12,7 +12,9 @@
   <body>
     <%= render 'shared/navbar' %>
 
-    <div class="bottom-footer <%= controller_name == 'pages' ? '' : 'content-padding' %>">
+
+
+    <div>
       <%= yield %>
     </div>
 
