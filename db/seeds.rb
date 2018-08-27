@@ -1,7 +1,7 @@
 company = User.create!(
-  email: 'company@company.com',
-  password: '123456',
-  company_name: 'Company Inc',
+  email: 'abc@email.com',
+  password: '123123',
+  company_name: 'ABC Inc',
   address: 'Av Visconde de Piraja 495, Rio De Janiero'
   )
 

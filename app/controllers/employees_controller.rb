@@ -59,11 +59,17 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def parse
+    @csv_file = employee_params[:csv_file]
+
+    raise
+  end
+
 
   private
 
   def employee_params
-    params.require(:employee).permit(:name, :address)
+    params.require(:employee).permit(:name, :address, :csv_file)
   end
 
 end
