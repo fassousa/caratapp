@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  require 'csv'
 
   def dashboard #this is our index page
     @user = current_user
@@ -60,16 +61,25 @@ class EmployeesController < ApplicationController
   end
 
   def parse
-    @csv_file = employee_params[:csv_file]
-
-    raise
+    @csv_file = params[:csv_file]
+    csv_text = File.read(@csv_file.tempfile)
+    CSV.parse(csv_text, {col_sep: ';'}) do |csv|
+      @employee = Employee.new(name: csv[0], address: csv[1])
+      @employee.user = current_user
+      @employee.save
+    end
+    redirect_to root_path
   end
 
 
   private
 
   def employee_params
-    params.require(:employee).permit(:name, :address, :csv_file)
+    params.require(:employee).permit(:name, :address)
   end
+
+  # def csv_params
+  #   params.require(:csv_file).permit(:tempfile)
+  # end
 
 end
