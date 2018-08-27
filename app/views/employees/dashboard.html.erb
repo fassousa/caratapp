@@ -20,7 +20,7 @@
       </div>
       <hr>
   <!--   need to have different views here for login or not login-->
-      <div>
+
         <!-- Button trigger modal -->
         <div id="employee-list">
           <h3>Employees List</h3>
@@ -28,8 +28,8 @@
             <% @e = e %>
             <%= render 'employee_card', e: @e %>
           <% end %>
+          <%= link_to "SEE REWARDS", rewards_path, class: "btn-carat-regular" %>
         </div>
-      </div>
 
     </div>
   </div>

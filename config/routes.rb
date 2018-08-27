@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'rewards', to: 'pages#rewards', as: :rewards
 
+  get 'rewards', to: 'pages#rewards'
+
   authenticated :user do
     root 'employees#dashboard', as: :authenticated_root
   end
