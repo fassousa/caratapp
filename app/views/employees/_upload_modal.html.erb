@@ -1,4 +1,4 @@
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,16 +9,14 @@
         </button>
       </div>
       <div class="modal-body">
-
-
-      <%= simple_form_for @employee, remote: true do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-
+      <%= form_tag({ controller: 'employees', action: 'parse'}, multipart: true, method: "post") do %>
+        <div class="form-group">
+          <%= file_field_tag :csv_file %>
+        </div>
       </div>
       <div class="modal-footer">
         <button id="close-button" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.button :submit, class: "btn btn-primary" %>
+            <%= submit_tag "submit" %>
          <% end %>
       </div>
     </div>
