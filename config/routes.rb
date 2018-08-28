@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  # Added for order models and controller
+  resources :orders, only: [:show, :create]
   resources :employees
   get 'dashboard', to: 'employees#dashboard', as: :dashboard
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
