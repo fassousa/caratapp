@@ -1,1 +1,3 @@
-document.querySelector('#emp<%= @employee.id %>').remove();
+var emp = document.getElementById('emp<%= @employee.id %>');
+emp.remove();
+console.log('works');

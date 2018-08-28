@@ -6,9 +6,10 @@
 
   <div>
     <a href='#' data-toggle="modal" data-target='<%= "#editModal#{e.id}" %>'>EDIT</a>
-    &nbsp;
+
     <%= link_to "DELETE", employee_path(e),
       method: :delete,
+      remote: true,
 
       data: { confirm: "Are you sure?" } %>
       <%= render "edit_modal", e: e %>

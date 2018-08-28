@@ -9,7 +9,7 @@ function updateEmployee(employeeHTML) {
   const employeeList = document.getElementById('employee-list');
   const employee = document.getElementById('emp<%= @employee.id %>');
   employee.parentNode.removeChild(employee);
-  employeeList.insertAdjacentHTML('beforeend', employeeHTML);
+  employeeList.insertAdjacentHTML('afterbegin', employeeHTML);
 }
 
 var editCloseBtn = document.getElementById('edit-close<%= @employee.id %>');
