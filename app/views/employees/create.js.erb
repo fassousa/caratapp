@@ -7,7 +7,7 @@ function refreshForm() {
 
 function addEmployee(employeeHTML) {
   const employeeList = document.getElementById('employee-list');
-  employeeList.insertAdjacentHTML('beforeend', employeeHTML);
+  employeeList.insertAdjacentHTML('afterbegin', employeeHTML);
 }
 
 var addCloseBtn = document.getElementById('add-close-button');
