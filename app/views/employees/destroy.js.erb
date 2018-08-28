@@ -1,3 +1,10 @@
+function updateMarkers() {
+  const map = document.getElementById('map');
+  const btnMap = document.getElementById("init-map")
+  map.setAttribute('data-markers', '<%= raw(@markers.to_json) %>');
+  btnMap.click();
+}
+
 var emp = document.getElementById('emp<%= @employee.id %>');
 emp.remove();
-console.log('works');
+updateMarkers();

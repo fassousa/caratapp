@@ -10,6 +10,13 @@ function addEmployee(employeeHTML) {
   employeeList.insertAdjacentHTML('afterbegin', employeeHTML);
 }
 
+function updateMarkers() {
+  const map = document.getElementById('map');
+  const btnMap = document.getElementById("init-map")
+  map.setAttribute('data-markers', '<%= raw(@markers.to_json) %>');
+  btnMap.click();
+}
+
 var addCloseBtn = document.getElementById('add-close-button');
 
 <% if @employee.errors.any? %>
@@ -18,4 +25,6 @@ var addCloseBtn = document.getElementById('add-close-button');
   addEmployee('<%= j render "employee_card", e: @employee %>');
   addCloseBtn.click();
   refreshForm();
+  updateMarkers();
+  initMap();
 <% end %>
