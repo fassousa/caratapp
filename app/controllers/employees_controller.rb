@@ -6,15 +6,7 @@ class EmployeesController < ApplicationController
     @employees = @user.employees
     @employee = Employee.new
 
-    @employees = Employee.where.not(latitude: nil, longitude: nil)
-
-    @markers = @employees.map do |employee|
-      {
-        lat: employee.latitude,
-        lng: employee.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/employees/map_box", locals: { flat: flat }) }
-      }
-    end
+    @markers = markers
   end
 
   def create
@@ -22,6 +14,7 @@ class EmployeesController < ApplicationController
     @employee.user = current_user
 
     if @employee.save
+      @markers = markers
       respond_to do |format|
         format.html { redirect_to user_path(current_user) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
@@ -39,6 +32,7 @@ class EmployeesController < ApplicationController
     @employee.update(employee_params)
 
     if @employee.save
+      @markers = markers
       respond_to do |format|
         format.html { redirect_to user_path(current_user) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
@@ -54,6 +48,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
+    @markers = markers
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js
@@ -70,6 +65,7 @@ class EmployeesController < ApplicationController
       @employee.save
       @employees << @employee
     end
+    @markers = markers
 
     respond_to do |format|
       format.html { redirect_to root_path(current_user) }
@@ -83,5 +79,16 @@ class EmployeesController < ApplicationController
 
   def employee_params
     params.require(:employee).permit(:name, :address)
+  end
+
+  def markers
+    employees = Employee.where.not(latitude: nil, longitude: nil)
+
+    markers = employees.map do |employee|
+      {
+        lat: employee.latitude,
+        lng: employee.longitude
+      }
+    end
   end
 end

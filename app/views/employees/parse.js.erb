@@ -3,6 +3,13 @@ function addEmployee(employeeHTML) {
   employeeList.insertAdjacentHTML('beforeend', employeeHTML);
 }
 
+function updateMarkers() {
+  const map = document.getElementById('map');
+  const btnMap = document.getElementById("init-map")
+  map.setAttribute('data-markers', '<%= raw(@markers.to_json) %>');
+  btnMap.click();
+}
+
 var csvCloseBtn = document.getElementById('csv-close-button');
 
 <% if @employee.errors.any? %>
@@ -14,4 +21,5 @@ var csvCloseBtn = document.getElementById('csv-close-button');
   <% end %>
 
   csvCloseBtn.click();
+  updateMarkers();
 <% end %>

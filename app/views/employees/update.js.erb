@@ -12,6 +12,13 @@ function updateEmployee(employeeHTML) {
   employeeList.insertAdjacentHTML('afterbegin', employeeHTML);
 }
 
+function updateMarkers() {
+  const map = document.getElementById('map');
+  const btnMap = document.getElementById("init-map")
+  map.setAttribute('data-markers', '<%= raw(@markers.to_json) %>');
+  btnMap.click();
+}
+
 var editCloseBtn = document.getElementById('edit-close<%= @employee.id %>');
 
 <% if @employee.errors.any? %>
@@ -21,4 +28,5 @@ var editCloseBtn = document.getElementById('edit-close<%= @employee.id %>');
   updateEmployee('<%= j render "employee_card", e: @employee %>');
   editCloseBtn.click();
   refreshForm();
+  updateMarkers();
 <% end %>
