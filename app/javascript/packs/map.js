@@ -1,7 +1,6 @@
 import GMaps from 'gmaps/gmaps.js';
 import { autocomplete } from '../components/autocomplete';
 
-
 function initMap() {
   var mapElement = document.getElementById('map');
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
@@ -17,6 +16,7 @@ function initMap() {
       map.fitLatLngBounds(markers);
     }
   }
+  window.map = map
 }
 
 initMap();
