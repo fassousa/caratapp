@@ -5,20 +5,19 @@
   align-items: center;
 }
 
-.card .icon-circle {
+.icon-circle {
   border-radius: 50%;
   background-color: #FBF0AC;
-  height: 100px;
-  width: 100px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  height: 130px;
+  width: 130px;
 }
 
 .icon-circle i {
   color: #364248;
   font-size: 45px;
-  padding-top: 25px;
 }
 
 // .icon {
@@ -28,69 +27,10 @@
 //  left: 50%;
 // }
 
-#how-it-works {
-  height: 100vh;
-  background-color: #FEFCEE;
-  h3 {
-  margin-top: 100px;
-  font-weight: 700;
-  }
-}
-
-.card .card-text h4 {
-  font-weight: 700;
-}
-
-.wrapper-cards {
-  margin-top: 100px;
-  padding: 0px 100px;
-}
 
 
-.card-reward {
-  background-color: #FBF0AC;
-  color: #364248;
-  padding: 20px 20px;
-  width: 300px;
-  margin: 20px 20px;
-  i {
-    color: #364248;
-    font-size: 45px;
-    padding-top: 25px;
-  }
-}
 
-.order-summary {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  h3 {
-    color: #364248;
-    font-size: 24px;
-    font-weight: bold;
-    margin-left: 30px;
-    margin-bottom: 20px;
-  }
-  p {
-    margin-left: 30px;
-    color: #364248;
-    font-size: 15px;
-  }
-  i {
-    margin: 0 10px;
-    color: #364248;
-  }
-}
 
-.box-right {
-  margin-left: 100px;
-
-}
-
-.box-left {
-  margin-right: -240px;
-}
 
 
 

@@ -92,6 +92,8 @@
 //Carat Regulars
 
 .btn-carat-regular {
+  display: block;
+  width: 100%;
   background-color: #364248;
   color: #FBF0AC;
   border-radius: 0px;
@@ -100,6 +102,7 @@
   padding: 10px 15px;
   font-weight: lighter;
   opacity: 0.8;
+  margin: 10px 0;
 }
 
 .btn-carat-regular:hover {
@@ -112,22 +115,21 @@
 }
 
 .btn-carat-add {
-
-  margin: 0 10px;
+  margin-left: auto;
+  margin-top: -50px;
   background-color: #FEFCEE;
   color: #364248;
   background-color: #FEFCEE;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   border: 1px solid #364248;
-  padding: 10px 15px;
+  padding: 5px 15px;
   font-weight: lighter;
   opacity: 0.7;
 }
 
 .btn-carat-add:hover {
-  margin: 10px;
   opacity: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-decoration: none;
   color: #364248;
 }

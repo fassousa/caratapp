@@ -16,18 +16,19 @@
       </div>
       <div class="text-center">
         <button type="button" class="btn-carat-regular" data-toggle="modal" data-target="#uploadModal"> UPLOAD CSV </button> <%= render "upload_modal" %>
-        <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> ADD MANUALLY </button> <%= render "add_modal" %>
+
       </div>
       <hr>
   <!--   need to have different views here for login or not login-->
 
         <!-- Button trigger modal -->
         <div id="employee-list">
-          <h3>Employees List</h3>
+          <h3>Employees List</h3><button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal">+</button> <%= render "add_modal" %>
           <% @employees.each do |e| %>
             <% @e = e %>
             <%= render 'employee_card', e: @e %>
           <% end %>
+
           <%= link_to "SEE REWARDS", rewards_path, class: "btn-carat-regular" %>
         </div>
 
