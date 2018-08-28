@@ -1,0 +1,17 @@
+function addEmployee(employeeHTML) {
+  const employeeList = document.getElementById('employee-list');
+  employeeList.insertAdjacentHTML('beforeend', employeeHTML);
+}
+
+var csvCloseBtn = document.getElementById('csv-close-button');
+
+<% if @employee.errors.any? %>
+  console.log("error");
+<% else %>
+
+  <% @employees.each do |e| %>
+    addEmployee('<%= j render "employee_card", e: e %>');
+  <% end %>
+
+  csvCloseBtn.click();
+<% end %>

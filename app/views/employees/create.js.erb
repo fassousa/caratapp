@@ -1,6 +1,6 @@
 function refreshForm() {
   const newEmployeeName = document.getElementById('employee_name');
-  const newEmployeeAddress = document.getElementById('employee_address');
+  const newEmployeeAddress = document.getElementById('employee_address_add');
   newEmployeeName.value = "";
   newEmployeeAddress.value = "";
 }
@@ -10,15 +10,12 @@ function addEmployee(employeeHTML) {
   employeeList.insertAdjacentHTML('beforeend', employeeHTML);
 }
 
-var closeBtn = document.getElementById('close-button')
+var addCloseBtn = document.getElementById('add-close-button');
 
 <% if @employee.errors.any? %>
-
-  console.log("error")
+  console.log("error");
 <% else %>
-  <% @e = @employee %>
-  addEmployee('<%= j render "employee_card", e: @e %>');
-  closeBtn.click()
+  addEmployee('<%= j render "employee_card", e: @employee %>');
+  addCloseBtn.click();
   refreshForm();
-  // refreshForm();
 <% end %>
