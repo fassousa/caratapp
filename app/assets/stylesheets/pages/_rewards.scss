@@ -1,0 +1,43 @@
+.order-summary {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    color: #364248;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-left: 30px;
+    color: #364248;
+    font-size: 15px;
+  }
+  i {
+    margin: 0 10px;
+    color: #364248;
+  }
+}
+
+.box-right {
+  margin-left: 100px;
+
+}
+
+.box-left {
+  margin-right: -240px;
+}
+
+// .card-reward {
+//   background-color: #FBF0AC;
+//   color: #364248;
+//   padding: 20px 20px;
+//   margin: 20px 20px;
+//   i {
+//     color: #364248;
+//     font-size: 45px;
+//     padding-top: 25px;
+//   }
+// }

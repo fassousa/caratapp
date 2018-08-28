@@ -32,6 +32,37 @@ body {
   margin: 0px;
 }
 
+.btn-box {
+  padding-top: 20px;
+}
+
 .row {
   margin: 0px;
+}
+
+#how-it-works {
+  height: 100vh;
+  background-color: #FEFCEE;
+  h3 {
+  margin-top: 100px;
+  font-spacing: 2px;
+  font-family: Sofia;
+  font-sie: 40px;
+  }
+}
+
+.icons {
+  margin-top: 30px;
+  height: 9vh;
+  fill: #364248;
+}
+
+.card-text h4 {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.wrapper-cards {
+  margin-top: 100px;
+  padding: 0px 100px;
 }
