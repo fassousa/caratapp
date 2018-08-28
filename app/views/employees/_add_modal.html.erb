@@ -12,7 +12,7 @@
 
       <%= simple_form_for @employee, remote: true do |f| %>
         <%= f.input :name %>
-        <%= f.input :address %>
+        <%= f.input :address, input_html: { id: "employee_address_add" } %>
 
       </div>
       <div class="modal-footer">
