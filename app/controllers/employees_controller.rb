@@ -63,25 +63,19 @@ class EmployeesController < ApplicationController
   def parse
     @csv_file = params[:csv_file]
     csv_text = File.read(@csv_file.tempfile)
+    @employees = []
     CSV.parse(csv_text, {col_sep: ';'}) do |csv|
       @employee = Employee.new(name: csv[0], address: csv[1])
       @employee.user = current_user
       @employee.save
+      @employees << @employee
     end
 
-
-      if @employee.save
-        respond_to do |format|
-          format.html { redirect_to root_path(current_user) }
-          format.js  # <-- will render `app/views/reviews/create.js.erb`
-        end
-      else
-        respond_to do |format|
-          format.html { render 'employees/dashboard' }
-          format.js  # <-- idem
-        end
-      end
+    respond_to do |format|
+      format.html { redirect_to root_path(current_user) }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
     end
+  end
 
 
 
