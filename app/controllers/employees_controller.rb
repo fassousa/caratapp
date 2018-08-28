@@ -68,7 +68,18 @@ class EmployeesController < ApplicationController
       @employee.user = current_user
       @employee.save
     end
-    redirect_to root_path
+
+    if @employee.save
+      respond_to do |format|
+        format.html { redirect_to root_path(current_user) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'employees/dashboard' }
+        format.js  # <-- idem
+      end
+    end
   end
 
 
