@@ -1,17 +1,17 @@
-<div class="employee-card" id="emp<%= @e.id %>">
+<div class="employee-card" id="emp<%= e.id %>">
   <div>
-    <div class="employee-name"><strong><%= @e.name %></strong></div>
-    <div class="employee-address"><%= @e.address %></div>
+    <div class="employee-name"><strong><%= e.name %></strong></div>
+    <div class="employee-address"><%= e.address %></div>
   </div>
 
   <div>
-    <a href='#' data-toggle="modal" data-target='<%= "#editModal#{@e.id}" %>'>EDIT</a>
+    <a href='#' data-toggle="modal" data-target='<%= "#editModal#{e.id}" %>'>EDIT</a>
     &nbsp;
     <%= link_to "DELETE", employee_path(e),
       method: :delete,
 
       data: { confirm: "Are you sure?" } %>
-      <%= render "edit_modal", e: @e %>
+      <%= render "edit_modal", e: e %>
   </div>
   <hr>
 </div>

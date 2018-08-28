@@ -69,18 +69,20 @@ class EmployeesController < ApplicationController
       @employee.save
     end
 
-    if @employee.save
-      respond_to do |format|
-        format.html { redirect_to root_path(current_user) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { render 'employees/dashboard' }
-        format.js  # <-- idem
+
+      if @employee.save
+        respond_to do |format|
+          format.html { redirect_to root_path(current_user) }
+          format.js  # <-- will render `app/views/reviews/create.js.erb`
+        end
+      else
+        respond_to do |format|
+          format.html { render 'employees/dashboard' }
+          format.js  # <-- idem
+        end
       end
     end
-  end
+
 
 
   private
@@ -88,9 +90,4 @@ class EmployeesController < ApplicationController
   def employee_params
     params.require(:employee).permit(:name, :address)
   end
-
-  # def csv_params
-  #   params.require(:csv_file).permit(:tempfile)
-  # end
-
 end
