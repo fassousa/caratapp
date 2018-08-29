@@ -82,7 +82,7 @@ class EmployeesController < ApplicationController
   end
 
   def markers
-    employees = Employee.where.not(latitude: nil, longitude: nil)
+    employees = current_user.employees.where.not(latitude: nil, longitude: nil)
 
     markers = employees.map do |employee|
       {
