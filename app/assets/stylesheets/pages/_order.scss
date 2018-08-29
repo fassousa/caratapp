@@ -1,0 +1,27 @@
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  border-bottom: 1px solid #364248;
+}
+
+.order-line {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #364248;
+
+}
+
+.order-image {
+  display: inline-flex;
+  background-color: #FBF0AC;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+}
+
+.title-order {
+  font-family: Sofia;
+  font-size: 40px;
+  margin-top: 50px;
+}
