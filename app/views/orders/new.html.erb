@@ -7,14 +7,14 @@
         <%= image_tag "route.svg", class:"icons text-center" %>
       </div>
 
-      <div class="route-info text-center">
+      <div class="route-info">
         <h4><strong>Route Fast A</strong></h4>
         <p>Morning Schedule</p>
       </div>
     </div>
 
     <div class="col-md-9">
-      <div class="row order-row">
+      <div class="order-row">
         <div>
           <p><strong>User Details</strong></p>
           <p><%= current_user.company_name %></p>
@@ -22,27 +22,37 @@
         </div>
         <div>
           <p><strong>Order No.</strong></p>
-          <p>DER4T1</p>
+          <p class="text-right">DER4T1</p>
         </div>
       </div>
-      <div class="row order-row">
+      <div class="order-row">
         <div>
           <p><strong>Taxes</strong></p>
           <p>IRPF Tax</p>
+          <p>IFF Tax</p>
         </div>
         <div>
-          <p><strong>BRL</strong></p>
-          <p>$ XXXX</p>
+          <p><strong>Currency BRL</strong></p>
+          <p class="text-right">$ XXXX</p>
+          <p class="text-right">$ XXXX</p>
         </div>
       </div>
-      <div class="row order-row">
+      <div class="order-row">
         <div>
           <p><strong>TOTAL</strong></p>
+          <p>Final Checkout Price</p>
         </div>
         <div>
-          <button type="button" class="btn-carat-regular">CHECKOUT</a>
+          <p class="text-right">$ XXXX</p>
         </div>
       </div>
+
+      <div class="order-row">
+        <div>
+          <button type="button" class="btn-carat-checkout text-right">CHECKOUT</a>
+        </div>
+      </div>
+
     </div>
 
   </div>
