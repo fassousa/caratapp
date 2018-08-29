@@ -17,9 +17,14 @@
 
         <button type="button" class="btn-carat-regular" data-toggle="modal" data-target="#uploadModal"> UPLOAD CSV </button> <%= render "upload_modal" %>
 
-        <button type="button" class="btn-carat-go">
-          <%= link_to "Save now", employees_path %>
-        </button>
+
+        <div id="hider" class="<%= @employees.present? ? '' : 'hide' %>">
+
+            <button type="button" class="btn-carat-go">
+              <%= link_to "Save now", rewards_path %>
+            </button>
+        </div>
+
 
 
       </div>
@@ -27,6 +32,7 @@
   <!--   need to have different views here for login or not login-->
       <div>
         <!-- Button trigger modal -->
+
         <h3 class="heading-flex">
           <span>Employees List</span>
           <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> + </button>

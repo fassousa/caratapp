@@ -48,6 +48,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
+    @has_employees = current_user.employees.empty?
     @markers = markers
     respond_to do |format|
       format.html { redirect_to root_path }

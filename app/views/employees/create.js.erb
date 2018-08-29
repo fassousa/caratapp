@@ -8,6 +8,8 @@ function refreshForm() {
 function addEmployee(employeeHTML) {
   const employeeList = document.getElementById('employee-list');
   employeeList.insertAdjacentHTML('afterbegin', employeeHTML);
+  const hider = document.getElementById('hider');
+  hider.classList.remove('hide');
 }
 
 function updateMarkers() {
