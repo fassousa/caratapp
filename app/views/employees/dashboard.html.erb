@@ -27,7 +27,11 @@
   <!--   need to have different views here for login or not login-->
       <div>
         <!-- Button trigger modal -->
-        <h3>Employees List <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> + </button> <%= render "add_modal" %></h3>
+        <h3 class="heading-flex">
+          <span>Employees List</span>
+          <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> + </button>
+        </h3>
+        <%= render "add_modal" %>
 
         <div id="employee-list">
 
