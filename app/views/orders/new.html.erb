@@ -1,0 +1,51 @@
+
+<div class="container content-padding">
+  <h3 class="text-center title-order order-line">Order Summary</h3>
+  <div class="row">
+    <div class="col-md-3 text-center">
+      <div class="order-image">
+        <%= image_tag "route.svg", class:"icons text-center" %>
+      </div>
+
+      <div class="route-info text-center">
+        <h4><strong>Route Fast A</strong></h4>
+        <p>Morning Schedule</p>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="row order-row">
+        <div>
+          <p><strong>User Details</strong></p>
+          <p><%= current_user.company_name %></p>
+          <p><%= current_user.address %></p>
+        </div>
+        <div>
+          <p><strong>Order No.</strong></p>
+          <p>DER4T1</p>
+        </div>
+      </div>
+      <div class="row order-row">
+        <div>
+          <p><strong>Taxes</strong></p>
+          <p>IRPF Tax</p>
+        </div>
+        <div>
+          <p><strong>BRL</strong></p>
+          <p>$ XXXX</p>
+        </div>
+      </div>
+      <div class="row order-row">
+        <div>
+          <p><strong>TOTAL</strong></p>
+        </div>
+        <div>
+          <button type="button" class="btn-carat-regular">CHECKOUT</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
