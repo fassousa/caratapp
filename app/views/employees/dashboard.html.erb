@@ -13,60 +13,56 @@
           <%= @user.email %>
         </p>
       </div>
+
       <div class="text-center">
-        <button type="button" class="btn-carat-regular">UPLOAD CSV</button>
-          <%= form_for @employee, url: { controller: 'employees', action: 'parse', method: :post } do |f| %>
-          <div class="form-group">
-            <%= f.file_field :csv_file, class: 'form-control' %>
-            <%= f.submit :submit, class: 'form-control' %>
-          </div>
-          <% end %>
-        <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> ADD MANUALLY </button> <%= render "add_modal" %>
+        <button type="button" class="btn-carat-regular" data-toggle="modal" data-target="#uploadModal"> UPLOAD CSV </button> <%= render "upload_modal" %>
+        <div id="hider" class="<%= @employees.present? ? '' : 'hide' %>">
+        <%= link_to "Save now", rewards_path, class: "btn-carat-go" %>
+        </div>
       </div>
-
-<!--  BTN to proceed to order summary, on the show of routes -->
-      <%= # form_tag orders_path do %>
-        <%= hidden_field_tag 'teddy_id', @teddy.id %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-      <% end %> -->
-
       <hr>
   <!--   need to have different views here for login or not login-->
       <div>
         <!-- Button trigger modal -->
+        <h3 class="heading-flex">
+          <span>Employees List</span>
+          <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> + </button>
+        </h3>
+        <%= render "add_modal" %>
         <div id="employee-list">
-          <h3>Employees List</h3>
           <% @employees.each do |e| %>
-            <% @e = e %>
-            <%= render 'employee_card', e: @e %>
+            <%= render 'employee_card', e: e %>
           <% end %>
         </div>
       </div>
 
     </div>
   </div>
-
-  path=color:0x0000ff|weight:5|40.737102,-73.990318|40.749825,-73.987963|40.752946,-73.987384|40.755823,-73.986397
   <div class="col-sm-8">
     <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
-
 </div>
 
-<% str = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyDZHlBpRsMyKbCT8QQu2IhHHmiVswm4BLM&" %>
+<button id="init-map" class="hide">
+  map
+</button>
 
-<% locations = [] %>
-<% @user.employees.each do |employee| %>
-  <% locations << "#{employee.latitude},#{employee.longitude}|"%>
-<% end %>
-
-<%= locations %>
-
-https://maps.googleapis.com/maps/api/staticmap?path=color:0x0000ff%7Cweight:5%7C40.737102,-73.990318%7C40.749825,-73.987963%7C40.752946,-73.987384%7C40.755823,-73.986397&size=512x512&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&signature=WDog7uhBuLyF26dwSv7XCsOLEj8=
-
-https://www.google.com/maps/embed/v1/directions
-  ?key=AIzaSyDZHlBpRsMyKbCT8QQu2IhHHmiVswm4BLM
-  &origin=Oslo+Norway
-  &destination=Telemark+Norway
-  &waypoint=Gransherad+Norway
-  &avoid=tolls|highways
+<script>
+  <% if current_user.employees.where.not(latitude: nil).first %>
+    <% @route = Route.new(current_user) %>
+    setTimeout(_ => {
+      window.map.drawRoute({
+        origin: 'Ipanema, WeWork',
+        // origin: <%= raw(@route.origin.to_json) %>,
+        // destination: 'Ipanema, WeWork',
+        destination: <%= raw(@route.origin.to_json) %>,
+        waypoints: <%= raw(@route.waypoints.to_json) %>,
+        travelMode: 'driving',
+        strokeColor: '#131540',
+        strokeOpacity: 0.6,
+        optimizeWaypoints: true,
+        strokeWeight: 6
+      });
+    }, 2000)
+  <% end %>
+</script>

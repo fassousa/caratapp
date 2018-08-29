@@ -1,13 +1,6 @@
-function refreshForm() {
-  const newEmployeeName = document.getElementById('employee_name');
-  const newEmployeeAddress = document.getElementById('employee_address_add');
-  newEmployeeName.value = "";
-  newEmployeeAddress.value = "";
-}
-
 function addEmployee(employeeHTML) {
   const employeeList = document.getElementById('employee-list');
-  employeeList.insertAdjacentHTML('afterbegin', employeeHTML);
+  employeeList.insertAdjacentHTML('beforeend', employeeHTML);
   const hider = document.getElementById('hider');
   hider.classList.remove('hide');
 }
@@ -19,14 +12,16 @@ function updateMarkers() {
   btnMap.click();
 }
 
-var addCloseBtn = document.getElementById('add-close-button');
+var csvCloseBtn = document.getElementById('csv-close-button');
 
 <% if @employee.errors.any? %>
   console.log("error");
 <% else %>
-  addEmployee('<%= j render "employee_card", e: @employee %>');
-  addCloseBtn.click();
-  refreshForm();
+
+  <% @employees.each do |e| %>
+    addEmployee('<%= j render "employee_card", e: e %>');
+  <% end %>
+
+  csvCloseBtn.click();
   updateMarkers();
-  initMap();
 <% end %>

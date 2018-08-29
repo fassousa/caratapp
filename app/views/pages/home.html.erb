@@ -1,67 +1,56 @@
-
-  <div class="banner" style="background-image: linear-gradient(-180deg, rgba(0,66,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://scontent.frao1-1.fna.fbcdn.net/v/t1.0-9/39913653_10100165725417274_152167654755401728_n.jpg?_nc_cat=0&oh=09a4d4858034af744d84c5973991ef85&oe=5C05C89A');">
-    <div class="banner-content text-center">
-      <h2>Commute better & save money</h2>
-      <p>We set up an intellegent transportation system to save you money and make your workers happier.</p>
-
-      <div class="button-style">
-        <%= link_to "START TODAY", new_user_registration_path, class: "btn-carat-blue" %>
-      </div>
+<div class="banner" style="background-image: linear-gradient(-180deg, rgba(0,66,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://scontent.frao1-1.fna.fbcdn.net/v/t1.0-9/39913653_10100165725417274_152167654755401728_n.jpg?_nc_cat=0&oh=09a4d4858034af744d84c5973991ef85&oe=5C05C89A');">
+  <div class="banner-content text-center">
+    <h2>Commute better & save money</h2>
+    <p>We set up an intellegent transportation system to save you money and make your workers happier.</p>
+    <div class="button-style">
+      <%= link_to "START TODAY", new_user_registration_path, class: "btn-carat-blue" %>
     </div>
   </div>
+</div>
 
-  <div id="how-it-works">
+<div id="how-it-works" class="container">
+  <div>
+    <h3 class="text-center">How it Works</h3>
     <div class="row">
-      <h3 class="text-center">How it Works</h3>
-
-      <div class="wrapper-cards text-center">
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="card text-center">
-            <div class="icon-circle icon">
-              <%= image_tag "information.svg", class:"icons text-center" %>
-            </div>
-            <div class="card-text">
-              <h4 class="how-heading">Upload Info</h4>
-              <p>You provide us with the location of your company and the employees you want brought to work.</p>
-            </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+          <div class="icon-circle icon">
+            <%= image_tag "information.svg", class:"icons text-center" %>
           </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="card text-center">
-            <div class="icon-circle">
-              <%= image_tag "route.svg", class:"icons text-center" %>
-            </div>
-            <div class="card-text">
-              <h4 class="how-heading">Get a route</h4>
-              <p>Our algorithyms efficiently determine the optimum configuations to get your employees to work.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="card text-center">
-            <div class="icon-circle">
-              <%= image_tag "school-bus.svg", class:"icons text-center" %>
-            </div>
-            <div class="card-text">
-              <h4 class="how-heading">Save & commute better</h4>
-              <p>Your company saves on transportation costs and your employees get to work comfortably and on time.</p>
-            </div>
+          <div class="card-text">
+            <h4 class="how-heading">Upload Info</h4>
+            <p>You provide us with the location of your company and the employees you want brought to work.</p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="btn-box">
-      <div class="button-style text-center">
-        <a class="btn-carat-blue">GET A QUOTE</a>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+          <div class="icon-circle">
+            <%= image_tag "route.svg", class:"icons text-center" %>
+          </div>
+          <div class="card-text">
+            <h4 class="how-heading">Get a route</h4>
+            <p>Our algorithyms efficiently determine the optimum configuations to get your employees to work.</p>
+          </div>
+        </div>
       </div>
-      <div class="back-to-top text-center">
-        <%= image_tag "chevron.svg", class:"icons text-center" %>
-        <!-- <a href="#top"><i id="top-chevron" class="fas fa-chevron-up"></i></a> -->
-      </div>
-    </div>
 
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+          <div class="icon-circle">
+            <%= image_tag "school-bus.svg", class:"icons text-center" %>
+          </div>
+          <div class="card-text">
+            <h4 class="how-heading">Save & commute better</h4>
+            <p>Your company saves on transportation costs and your employees get to work comfortably and on time.</p>
+          </div>
+        </div>
+      </div>
   </div>
+  <div class="flex-center">
+    <a href="#" class="back-to-top">
+      <%= image_tag "chevron.svg", class:"icons" %>
+    </a>
+  </div>
+</div>

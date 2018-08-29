@@ -1,26 +1,32 @@
 function refreshForm() {
   const newEmployeeName = document.getElementById('employee_name');
-  const newEmployeeAddress = document.getElementById('employee_address');
+  const newEmployeeAddress = document.getElementById('employee_address_edit');
   newEmployeeName.value = "";
   newEmployeeAddress.value = "";
 }
 
 function updateEmployee(employeeHTML) {
   const employeeList = document.getElementById('employee-list');
-  const employee = document.getElementById('<%= @employee.id %>');
+  const employee = document.getElementById('emp<%= @employee.id %>');
   employee.parentNode.removeChild(employee);
-  employeeList.insertAdjacentHTML('beforeend', employeeHTML);
+  employeeList.insertAdjacentHTML('afterbegin', employeeHTML);
 }
 
-var closeBtn = document.getElementById('close<%= @employee.id %>')
+function updateMarkers() {
+  const map = document.getElementById('map');
+  const btnMap = document.getElementById("init-map")
+  map.setAttribute('data-markers', '<%= raw(@markers.to_json) %>');
+  btnMap.click();
+}
+
+var editCloseBtn = document.getElementById('edit-close<%= @employee.id %>');
 
 <% if @employee.errors.any? %>
 
-  console.log("error")
+  console.log("error");
 <% else %>
-  <% @e = @employee %>
-  updateEmployee('<%= j render "employee_card", e: @e %>');
-  closeBtn.click()
+  updateEmployee('<%= j render "employee_card", e: @employee %>');
+  editCloseBtn.click();
   refreshForm();
-  // refreshForm();
+  updateMarkers();
 <% end %>
