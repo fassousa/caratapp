@@ -8,3 +8,10 @@ function updateMarkers() {
 var emp = document.getElementById('emp<%= @employee.id %>');
 emp.remove();
 updateMarkers();
+
+if (<%= @has_employees %>) {
+  const hider = document.getElementById('hider');
+  hider.classList.add('hide');
+}
+
+

@@ -1,6 +1,8 @@
 function addEmployee(employeeHTML) {
   const employeeList = document.getElementById('employee-list');
   employeeList.insertAdjacentHTML('beforeend', employeeHTML);
+  const hider = document.getElementById('hider');
+  hider.classList.remove('hide');
 }
 
 function updateMarkers() {
