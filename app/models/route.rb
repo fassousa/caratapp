@@ -27,11 +27,13 @@ class Route
   private
 
   def query_params(options = {})
+    if @user.most_distant_employee
     {
       origin: @user.most_distant_employee.location,
       destination: @user.address,
       waypoints: "#{options[:optimize] ? 'optimize:true|' : ''}#{@waypoints}",
       # key: ENV['GOOGLE_API_BROWSER_KEY']
     }.to_query
+    end
   end
 end
