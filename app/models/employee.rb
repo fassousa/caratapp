@@ -5,7 +5,7 @@ class Employee < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def location
-    {lat: latitude, lng: longitude}.to_json
+    {lat: latitude, lng: longitude}
   end
 
   def distance_to_work

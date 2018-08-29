@@ -49,9 +49,11 @@
     <% @route = Route.new(current_user) %>
     setTimeout(_ => {
       window.map.drawRoute({
-        origin: '<%= current_user.address %>',
-        destination: 'Copacabana, Rio de Janeiro',
-        waypoints: [{location: <%= @route.user.employees.where.not(latitude: nil).first.location.html_safe %>}],
+        origin: 'Ipanema, WeWork',
+        // origin: <%= raw(@route.origin.to_json) %>,
+        // destination: 'Ipanema, WeWork',
+        destination: <%= raw(@route.origin.to_json) %>,
+        waypoints: <%= raw(@route.waypoints.to_json) %>,
         travelMode: 'driving',
         strokeColor: '#131540',
         strokeOpacity: 0.6,
