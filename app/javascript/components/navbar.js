@@ -20,6 +20,7 @@ function initUpdateNavbarOnScroll() {
     $('html, body').stop().animate({
         scrollTop: $( $(this).attr('href') ).offset().top
     }, 400);
+    $('#sandwich-menu').click()
     return false;
   });
   $('.scrollTop a').scrollTop();
