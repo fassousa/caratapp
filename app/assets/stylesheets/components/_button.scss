@@ -150,11 +150,20 @@
   text-decoration: none;
 }
 
-.back-to-top a {
-  font-size: 50px;
-  color: #364248;
-  &:hover {
-    color: #F4D213;
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-top {
+   display: block;
+  a {
+
+    font-size: 50px;
+    color: #364248;
+    &:hover {
+      color: #F4D213;
+    }
   }
   i {
     margin-top: auto;
@@ -170,7 +179,7 @@
   letter-spacing: 2px;
   border: 1px solid green;
   padding: 10px 15px;
-  font-weight: lighter;
+  font-weight: bold;
   opacity: 0.8;
   margin: 10px 0;
 }
