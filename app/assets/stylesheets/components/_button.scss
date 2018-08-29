@@ -197,3 +197,24 @@
   text-decoration: none;
   opacity: 1;
 }
+
+.btn-carat-checkout {
+  background-color: #364248;
+  color: #FBF0AC;
+  border-radius: 0px;
+  letter-spacing: 2px;
+  border: 1px solid #364248;
+  padding: 10px 15px;
+  font-weight: lighter;
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+.btn-carat-checkout:hover {
+  background-color: #364248;
+  color: #F4D213;
+  border-radius: 0px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  opacity: 1;
+}
