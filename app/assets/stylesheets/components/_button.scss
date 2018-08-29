@@ -173,7 +173,7 @@
 .btn-carat-go {
   display: block;
   width: 100%;
-  background-color: green;
+  background-color: #76AD86;
   color: white;
   border-radius: 0px;
   letter-spacing: 2px;
@@ -184,8 +184,14 @@
   margin: 10px 0;
 }
 
+.btn-carat-go a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 .btn-carat-go:hover {
-  background-color: green;
+  background-color: #76AD86;
   color: white;
   border-radius: 0px;
   letter-spacing: 2px;
