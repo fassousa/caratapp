@@ -45,17 +45,19 @@
 </button>
 
 <script>
-  <% @route = Route.new(current_user) %>
-  setTimeout(_ => {
-    window.map.drawRoute({
-      origin: '<%= current_user.address %>',
-      destination: 'Copacabana, Rio de Janeiro',
-      waypoints: [{location: <%= @route.user.employees.where.not(latitude: nil).first.location.html_safe %>}],
-      travelMode: 'driving',
-      strokeColor: '#131540',
-      strokeOpacity: 0.6,
-      optimizeWaypoints: true,
-      strokeWeight: 6
-    });
-  }, 2000)
+  <% if current_user.employees.where.not(latitude: nil).first %>
+    <% @route = Route.new(current_user) %>
+    setTimeout(_ => {
+      window.map.drawRoute({
+        origin: '<%= current_user.address %>',
+        destination: 'Copacabana, Rio de Janeiro',
+        waypoints: [{location: <%= @route.user.employees.where.not(latitude: nil).first.location.html_safe %>}],
+        travelMode: 'driving',
+        strokeColor: '#131540',
+        strokeOpacity: 0.6,
+        optimizeWaypoints: true,
+        strokeWeight: 6
+      });
+    }, 2000)
+  <% end %>
 </script>
