@@ -6,26 +6,26 @@
 }
 
 .icon-circle {
+  display: inline-flex;
   border-radius: 50%;
   background-color: #FBF0AC;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  height: 130px;
-  width: 130px;
+  height: 150px;
+  width: 150px;
 }
 
-.icon-circle i {
-  color: #364248;
-  font-size: 45px;
+.icon-space {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    padding-top: 20px;
+  }
 }
 
-// .icon {
-//  height: 30px;
-//  fill: #364248;
-//  position: absolute;
-//  left: 50%;
-// }
+
 
 
 
