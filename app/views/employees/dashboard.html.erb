@@ -17,13 +17,22 @@
 
         <button type="button" class="btn-carat-regular" data-toggle="modal" data-target="#uploadModal"> UPLOAD CSV </button> <%= render "upload_modal" %>
 
-        <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> ADD MANUALLY </button> <%= render "add_modal" %>
+        <button type="button" class="btn-carat-go">
+          <%= link_to "Save now", employees_path %>
+        </button>
+
+
       </div>
       <hr>
   <!--   need to have different views here for login or not login-->
       <div>
         <!-- Button trigger modal -->
-        <h3>Employees List</h3>
+        <h3 class="heading-flex">
+          <span>Employees List</span>
+          <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> + </button>
+        </h3>
+        <%= render "add_modal" %>
+
         <div id="employee-list">
 
           <% @employees.each do |e| %>
@@ -49,9 +58,11 @@
     <% @route = Route.new(current_user) %>
     setTimeout(_ => {
       window.map.drawRoute({
-        origin: '<%= current_user.address %>',
-        destination: 'Copacabana, Rio de Janeiro',
-        waypoints: [{location: <%= @route.user.employees.where.not(latitude: nil).first.location.html_safe %>}],
+        origin: 'Ipanema, WeWork',
+        // origin: <%= raw(@route.origin.to_json) %>,
+        // destination: 'Ipanema, WeWork',
+        destination: <%= raw(@route.origin.to_json) %>,
+        waypoints: <%= raw(@route.waypoints.to_json) %>,
         travelMode: 'driving',
         strokeColor: '#131540',
         strokeOpacity: 0.6,
