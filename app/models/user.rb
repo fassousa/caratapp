@@ -14,4 +14,8 @@ class User < ApplicationRecord
       distance_to(employee)
     end.last
   end
+
+  def location
+    {lat: latitude, lng: longitude}
+  end
 end

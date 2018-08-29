@@ -150,17 +150,54 @@
   text-decoration: none;
 }
 
-.back-to-top a {
-  font-size: 50px;
-  color: #364248;
-  &:hover {
-    color: #F4D213;
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-top {
+   display: block;
+  a {
+
+    font-size: 50px;
+    color: #364248;
+    &:hover {
+      color: #F4D213;
+    }
   }
   i {
     margin-top: auto;
   }
 }
 
+.btn-carat-go {
+  display: block;
+  width: 100%;
+  background-color: #76AD86;
+  color: white;
+  border-radius: 0px;
+  letter-spacing: 2px;
+  border: 1px solid green;
+  padding: 10px 15px;
+  font-weight: bold;
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+.btn-carat-go a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn-carat-go:hover {
+  background-color: #76AD86;
+  color: white;
+  border-radius: 0px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  opacity: 1;
+}
 
 
 
