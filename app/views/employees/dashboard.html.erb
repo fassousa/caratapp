@@ -50,7 +50,7 @@
     window.map.drawRoute({
       origin: '<%= current_user.address %>',
       destination: 'Copacabana, Rio de Janeiro',
-      waypoints: [{location: <%= @route.user.employees.where.not(latitude: nil).first.location.html_safe %>}],
+      waypoints: <%= @route.waypoints %>,
       travelMode: 'driving',
       strokeColor: '#131540',
       strokeOpacity: 0.6,
