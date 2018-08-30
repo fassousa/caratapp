@@ -48,7 +48,7 @@ class Route
       origin: origin,
       destination: destination,
       waypoints: "#{options[:optimize] ? 'optimize:true|' : ''}#{@waypoints}",
-      # key: ENV['GOOGLE_API_BROWSER_KEY']
+      key: ENV['GOOGLE_API_BROWSER_KEY']
     }.to_query
     end
   end
