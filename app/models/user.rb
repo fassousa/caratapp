@@ -16,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def location
-    {lat: latitude, lng: longitude}
+    {lat: latitude.to_f, lng: longitude.to_f}
   end
 end

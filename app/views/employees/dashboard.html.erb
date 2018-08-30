@@ -17,7 +17,7 @@
       <div class="text-center">
         <button type="button" class="btn-carat-regular" data-toggle="modal" data-target="#uploadModal"> UPLOAD CSV </button> <%= render "upload_modal" %>
         <div id="hider" class="<%= @employees.present? ? '' : 'hide' %>">
-        <%= link_to "Save now", rewards_path, class: "btn-carat-go" %>
+        <%= link_to "SAVE NOW!", rewards_path, class: "btn-carat-go" %>
         </div>
       </div>
       <hr>
@@ -52,10 +52,10 @@
     <% @route = Route.new(current_user) %>
     setTimeout(_ => {
       window.map.drawRoute({
-        origin: 'Ipanema, WeWork',
+        origin: <%= raw(@route.origin.to_json) %>,
         // origin: <%= raw(@route.origin.to_json) %>,
         // destination: 'Ipanema, WeWork',
-        destination: <%= raw(@route.origin.to_json) %>,
+        destination: <%= raw(@route.destination.to_json) %>,
         waypoints: <%= raw(@route.waypoints.to_json) %>,
         travelMode: 'driving',
         strokeColor: '#131540',
