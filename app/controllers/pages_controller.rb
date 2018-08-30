@@ -5,9 +5,14 @@ class PagesController < ApplicationController
   end
 
   def rewards
-    @annual_cost = Money.new(430920, "BRL")
-    @total_employees = current_user.employees.count
-    @total_cost = @annual_cost * @total_employees
+    @route = Route.new(current_user)
+
+    # @employees = current_user.employees
+
+    @route.carat_cost
+
+
+
     @total_individual_distance = 0
     current_user.employees.each do |e|
       @total_individual_distance += e.distance_to_work
