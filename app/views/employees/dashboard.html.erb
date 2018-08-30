@@ -48,7 +48,7 @@
 </button>
 
 <script>
-  <% if current_user.employees.where.not(latitude: nil).first %>
+  <% if params[:route] == 'true' %>
     <% @route = Route.new(current_user) %>
     setTimeout(_ => {
       window.map.drawRoute({
