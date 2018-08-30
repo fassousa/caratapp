@@ -17,7 +17,7 @@
       <div class="text-center">
         <button type="button" class="btn-carat-regular" data-toggle="modal" data-target="#uploadModal"> UPLOAD CSV </button> <%= render "upload_modal" %>
         <div id="hider" class="<%= @employees.present? ? '' : 'hide' %>">
-        <%= link_to "SAVE NOW!", rewards_path, class: "btn-carat-go" %>
+        <%= link_to "CALCULATE", rewards_path, class: "btn-carat-go" %>
         </div>
       </div>
       <hr>
@@ -25,7 +25,7 @@
       <div>
         <!-- Button trigger modal -->
         <h3 class="heading-flex">
-          <span>Employees List</span>
+          <span>Employees</span>
           <button type="button" class="btn-carat-add" data-toggle="modal" data-target="#addModal"> + </button>
         </h3>
         <%= render "add_modal" %>
@@ -48,7 +48,7 @@
 </button>
 
 <script>
-  <% if current_user.employees.where.not(latitude: nil).first %>
+  <% unless current_user.employees.where.not(latitude: nil).empty? %>
     <% @route = Route.new(current_user) %>
     setTimeout(_ => {
       window.map.drawRoute({
