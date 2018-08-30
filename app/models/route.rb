@@ -5,7 +5,17 @@ class Route
     @iframe_base_url = 'https://www.google.com/maps/embed/v1/directions'
     @json_base_url   = 'https://maps.googleapis.com/maps/api/directions/json'
     @json = HTTParty.get(json_url)
+
+    @employee_yearly_cost = Money.new(4309.20, "BRL")
     @km_cost = 70 # ???
+  end
+
+  def carat_yearly_cost
+    @employee_yearly_cost * total_distance
+  end
+
+  def non_carat_yearly_cost
+    @employee_yearly_cost * total_distance
   end
 
   def origin
@@ -28,6 +38,10 @@ class Route
 
   def json_url
     "#{json_base_url}?#{query_params(optimize: true)}"
+  end
+
+  def total_time_in_hours
+    json['routes'][0]['legs'].pluck('duration').pluck('value').sum / 3600
   end
 
   def total_distance(option = {})

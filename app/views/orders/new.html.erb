@@ -16,44 +16,39 @@
     <div class="col-md-9">
       <div class="order-row">
         <div>
-          <p><strong>User Details</strong></p>
+          <p><strong>Your Details</strong></p>
           <p><%= current_user.company_name %></p>
           <p><%= current_user.address %></p>
         </div>
         <div>
-          <p><strong>Order No.</strong></p>
-          <p class="text-right">DER4T1</p>
+          <p><strong>Users</strong></p>
+          <p class="text-right">13</p>
         </div>
       </div>
 
       <div class="order-row">
-        <div>
-          <p><strong>Taxes</strong></p>
-          <p>IRPF Tax</p>
-          <p>IFF Tax</p>
+        <div class="padding-order">
+          <p><strong>Total Charges</strong></p>
+          <p>Monthly Subscription</p>
         </div>
-        <div>
-          <p><strong>Currency BRL</strong></p>
-          <p class="text-right">$ XXXX</p>
-          <p class="text-right">$ XXXX</p>
+        <div class="padding-order">
+          <p class="text-right">Currency</p>
+          <p class="text-right">R$ 3.718,05</p>
         </div>
       </div>
 
-      <div class="order-row">
-        <div>
-          <p><strong>TOTAL</strong></p>
-          <p>Final Checkout Price</p>
+
+        <div class="btn-corner">
+          <%= link_to "CHECKOUT", dashboard_path, class: "btn-carat-go text-center" %>
         </div>
-        <div>
-          <p class="text-right">$ XXXX</p>
-        </div>
-      </div>
+
 
       <div class="order-row">
         <div>
-    <%= link_to "CHECKOUT", dashboard_path(route: true), class: "btn-carat-go text-center" %>
-  </div>
+          <%= link_to "CHECKOUT", dashboard_path(route: true), class: "btn-carat-go text-center" %>
+        </div>
       </div>
+
     </div>
   </div>
 </div>

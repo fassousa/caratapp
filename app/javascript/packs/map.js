@@ -179,11 +179,11 @@ function initMap() {
         ]
     },
     {
-        "featureType": "road",
+        "featureType": "road", // Streets color
         "elementType": "all",
         "stylers": [
             {
-                "color": "#ffffff"
+                "color": "#FBFOAC"
             }
         ]
     },
@@ -201,10 +201,7 @@ function initMap() {
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#ffffff"
-            },
-            {
-                "visibility": "simplified"
+                "color": "" // Highway colo
             }
         ]
     },
@@ -225,10 +222,7 @@ function initMap() {
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "simplified"
-            },
-            {
-                "color": "#ffffff"
+                "color": "#FBFOAC" // Bigger Street color
             }
         ]
     },
@@ -246,10 +240,7 @@ function initMap() {
         "elementType": "all",
         "stylers": [
             {
-                "color": "#ffffff"
-            },
-            {
-                "visibility": "simplified"
+                "color": "#99cccc" // Smaller streets
             }
         ]
     },
