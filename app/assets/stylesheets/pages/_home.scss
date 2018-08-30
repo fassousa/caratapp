@@ -32,11 +32,6 @@ body {
   margin: 0px;
 }
 
-.back-to-top {
-    display: block;
-    padding-top: 20px;
-}
-
 .btn-box {
   padding-top: 20px;
 }
@@ -54,14 +49,22 @@ body {
 
 #how-it-works {
   height: 100vh;
+  padding-top: 70px;
   background-color: #FEFCEE;
+  display: flex;
+  align-items: center;
   h3 {
-  margin-top: 130px;
   font-spacing: 2px;
   font-family: Sofia;
   font-size: 40px;
   }
 }
+
+.back-to-top {
+    display: block;
+    padding-top: 60px;
+}
+
 
 .icons {
   height: 10vh;
