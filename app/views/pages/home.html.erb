@@ -1,5 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(-180deg, rgba(0,66,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://scontent.frao1-1.fna.fbcdn.net/v/t1.0-9/39913653_10100165725417274_152167654755401728_n.jpg?_nc_cat=0&oh=09a4d4858034af744d84c5973991ef85&oe=5C05C89A');">
-  <div class="banner-content text-center">
+<div id="home-banner" class="banner" style="background-image: linear-gradient(-180deg, rgba(0,66,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://scontent.frao1-1.fna.fbcdn.net/v/t1.0-9/39913653_10100165725417274_152167654755401728_n.jpg?_nc_cat=0&oh=09a4d4858034af744d84c5973991ef85&oe=5C05C89A');">
+  <div id="banner-content" class="banner-content text-center">
     <h2>Commute better & save money</h2>
     <p>We set up an intellegent transportation system to save you money and make your workers happier.</p>
     <div class="button-style">
@@ -11,8 +11,7 @@
 <div id="how-it-works" class="container">
   <div>
     <h3 class="text-center">How it Works</h3>
-    <div class="row">
-
+    <div class="row wrapper-row">
       <div class="col-xs-12 col-sm-4">
         <div class="card text-center">
           <div class="icon-circle icon">
@@ -43,17 +42,17 @@
             <%= image_tag "school-bus.svg", class:"icons text-center" %>
           </div>
           <div class="card-text">
-            <h4 class="how-heading">Save & commute better</h4>
+            <h4 class="how-heading">Commute better</h4>
             <p>Your company saves on transportation costs and your employees get to work comfortably and on time.</p>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
-  <div class="flex-center">
-    <a href="#" class="back-to-top">
-      <%= image_tag "chevron.svg", class:"icons" %>
-    </a>
+    <div class="text-center">
+      <a href="#home-banner" class="back-to-top slow-anchor">
+        <%= image_tag "chevron.svg", class:"icons" %>
+      </a>
+    </div>
   </div>
 </div>
