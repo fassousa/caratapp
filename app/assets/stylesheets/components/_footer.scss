@@ -8,6 +8,7 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   bottom: 0px;
+  transform: translateY(4em);
 }
 
 .footer-links a {
@@ -22,5 +23,5 @@
 }
 
 .content {
-  min-height: calc(100vh - 100px);
+  min-height: calc(92vh - 100px);
 }

@@ -1,7 +1,15 @@
 #map {
   width: 100%;
   height: calc(100vh - 70px);
-  margin-top: 80px;
+  // margin-top: 80px;
+  position: sticky !important;
+  flex: 0 0 450px;
+  top: 0;
+  transform: translateY(4em);
+}
+
+.dashboard-container {
+  display: flex;
 }
 
 .column-padding {
