@@ -85,11 +85,13 @@ class EmployeesController < ApplicationController
   def markers
     employees = current_user.employees.where.not(latitude: nil, longitude: nil)
 
-    markers = employees.map do |employee|
-      {
-        lat: employee.latitude,
-        lng: employee.longitude
-      }
-    end
+    markers = employees.map(&:location).push(
+      current_user.location.merge(icon: ActionController::Base.helpers.asset_path('destination.png'))
+    )
+    # .push({
+    #   lat: current_user.latitude,
+    #   lng: current_user.longitude
+    # })
+    # raise
   end
 end
