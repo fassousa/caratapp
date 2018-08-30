@@ -36,24 +36,38 @@ body {
   padding-top: 20px;
 }
 
+.wrapper-row {
+  padding-top: 50px;
+  h3 {
+    margin-top: 30px;
+  }
+}
+
 .row {
   margin: 0px;
 }
 
 #how-it-works {
   height: 100vh;
+  padding-top: 70px;
   background-color: #FEFCEE;
+  display: flex;
+  align-items: center;
   h3 {
-  margin-top: 100px;
   font-spacing: 2px;
   font-family: Sofia;
   font-size: 40px;
   }
 }
 
+.back-to-top {
+    display: block;
+    padding-top: 60px;
+}
+
+
 .icons {
   height: 10vh;
-  color: red;
 }
 
 .card-text h4 {
