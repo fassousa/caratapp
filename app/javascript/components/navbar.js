@@ -2,7 +2,7 @@ function initUpdateNavbarOnScroll() {
   const navbar = document.querySelector('.navbar-wagon-home');
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
+      if (window.scrollY >= (window.innerHeight - 70)) {
         navbar.classList.add('navbar-wagon-blue');
       } else {
         navbar.classList.remove('navbar-wagon-blue');

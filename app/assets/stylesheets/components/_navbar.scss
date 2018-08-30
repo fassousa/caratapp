@@ -97,11 +97,8 @@
   font-size: 50px;
   color: #F4D213;
   font-family: $logo-font;
-  &:hover {
-    text-decoration: none !important;
-  }
 }
 
-a a:hover a:focus a:active {
+a, a:hover, a:focus, a:active {
   text-decoration: none !important;
 }
