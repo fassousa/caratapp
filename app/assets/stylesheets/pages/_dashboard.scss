@@ -1,11 +1,11 @@
 #map {
   width: 100%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 66px);
   // margin-top: 80px;
   position: sticky !important;
   flex: 0 0 450px;
   top: 0;
-  transform: translateY(4em);
+  transform: translateY(3.7em);
 }
 
 .dashboard-container {
@@ -33,6 +33,10 @@
     color: #364248;
     padding-bottom: 10px;
   }
+}
+
+.no-padding {
+  padding-right: 0;
 }
 
 .heading-flex {

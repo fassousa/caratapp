@@ -26,11 +26,12 @@
 }
 
 .button-style {
-  position: relative; left: calc(50% - 89px);
+  position: relative; left: calc(1em);
   width: 250px;
   height: 62px;
   border-right: 3px solid #364248;
   border-bottom: 3px solid #364248;
+  margin: auto;
   &:hover {
     transition: background-color 300ms ease;
     transition-property: background-color;
