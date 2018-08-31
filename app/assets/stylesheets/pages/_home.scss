@@ -19,13 +19,23 @@
   font-size: 25px;
   font-weight: lighter;
   color: white;
-  margin-bottom: 30px;
+  margin: 0 20px 30px 20px;
 }
 
 .banner-content h2 {
   font-family: $logo-font;
   font-size: 50px;
   color: #FBF0AC;
+}
+
+@media only screen and (max-width: 400px) {
+  .banner-content h2 {
+    font-size: 40px;
+  }
+
+  .banner p {
+    font-size: 20px;
+  }
 }
 
 body {
@@ -48,11 +58,11 @@ body {
 }
 
 #how-it-works {
-  height: 100vh;
+  // height: 100vh;
   padding-top: 70px;
   background-color: #FEFCEE;
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   h3 {
   font-spacing: 2px;
   font-family: Sofia;
